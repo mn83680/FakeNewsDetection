@@ -1,0 +1,20 @@
+﻿<!-- list Categores -->
+@model List<Category>
+<table class="table table-borderd table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+        </tr>
+
+    }
+
+</table>
+
+

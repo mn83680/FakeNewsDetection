@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "News Classification Result";
+}
+
+<h2>News Classification Result</h2>
+
+@if (Model != null)
+{
+    <p>The news has been classified into category with ID: @Model.Prediction</p>
+}
+else
+{
+    <p>Sorry, unable to determine the category of the news.</p>
+}

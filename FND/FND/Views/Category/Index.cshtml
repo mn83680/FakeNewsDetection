@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<br />
+
+<div>
+<a href="/Category/New" class="btn btn-success">New Category</a>
+</div>
+<br />
+<table class="table table-borderd table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <!-- Useful in Search News -->
+            <td><a href="/Category/details/@item.Id">Deatils</a></td>
+            <td><a href="/Category/Delete/@item.Id">Delete</a></td>
+        </tr>
+    }
+</table>
