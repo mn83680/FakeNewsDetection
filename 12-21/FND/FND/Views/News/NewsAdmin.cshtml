@@ -9,6 +9,11 @@
                 <div class="card-body">
                     <h5 class="card-title">@item.Title</h5>
                     <p class="card-text">@item.Content </p>
+                    <p class="card-text">@item.CreatedAt</p>
+                    @if(item.IsFake == true)
+                    {
+                        <p class="Fake-Text">This News is Fake</p> 
+                    }
                     <a href="~/News/Edit/@item.Id" class="btn btn-primary">Edit</a>
                     <a class="btn btn-primary" href="~/News/Delete/@item.Id">Delete</a>
                 </div>
