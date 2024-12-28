@@ -104,6 +104,17 @@ abbr[data-original-title] {
   text-decoration-skip-ink: none;
 }
 
+News_Time {
+    font-size: 16px;
+    color: #6c757d;
+    
+}
+Fake-Text {
+    color: #ff0000;
+    background-color: #ffffff;
+    border-color: #ff0000;
+}
+
 address {
   margin-bottom: 1rem;
   font-style: normal;

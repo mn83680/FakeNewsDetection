@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Jy9honA1CC1q5LPamJFrYF63OFTWXQfJRUILKmvjWFQ=",
+  "Hash": "sLh64ubw7oh4R+vdiejX95UeIexWMh+NtaxBA1Fm1WM=",
   "Source": "FND",
   "BasePath": "_content/FND",
   "Mode": "Default",
@@ -289,12 +289,12 @@
       "OriginalItemSpec": "wwwroot\\images\\apple.jpg"
     },
     {
-      "Identity": "C:\\Users\\ASUS\\Desktop\\Backup\\12-21\\FND\\FND\\wwwroot\\images\\BG.png",
+      "Identity": "C:\\Users\\ASUS\\Desktop\\Backup\\12-21\\FND\\FND\\wwwroot\\images\\Back.png",
       "SourceId": "FND",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\ASUS\\Desktop\\Backup\\12-21\\FND\\FND\\wwwroot\\",
       "BasePath": "_content/FND",
-      "RelativePath": "images/BG.png",
+      "RelativePath": "images/Back.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -303,7 +303,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\BG.png"
+      "OriginalItemSpec": "wwwroot\\images\\Back.png"
     },
     {
       "Identity": "C:\\Users\\ASUS\\Desktop\\Backup\\12-21\\FND\\FND\\wwwroot\\images\\ChampionsofLaLiga.jpg",

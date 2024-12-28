@@ -26,31 +26,31 @@
                         <li class="nav-item active">
                             <a class="nav-link" asp-area="" asp-controller="News" asp-action="AllNews">Welcome @User.Identity.Name</a>
                         </li> 
-                       
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @if (User.Identity.IsAuthenticated == false){
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+                                 <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                                 <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
                                 }
                                 else
                                 {
                                     @if (User.IsInRole("Admin"))
                                     {
                                         
-                                        <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Users">Users</a>
+                                        
                                         <a class="nav-link text-dark" asp-controller="Account" asp-action="AddAdmin">AddAdmin</a>
                                         <a class="nav-link text-dark" asp-controller="Account" asp-action="AddPublisher">AddPublisher</a>
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Users">Users</a>
                                         <a class="nav-link text-dark" asp-controller="roles" asp-action="New">AddRoles</a>
-                                        <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">CategoryControl</a>
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">CategoryControl</a>   
                                     }
                                     @if (User.IsInRole("Admin") || User.IsInRole("Publisher"))
                                     {
                                         <a class="nav-link text-dark" asp-controller="Services" asp-action="uploadImage">UploadImage</a>
                                         <a class="nav-link text-dark" asp-controller="News" asp-action="NewsAdmin">NewsControl</a>
                                         <a class="nav-link text-dark" asp-controller="News" asp-action="New">AddNews</a>
-                                        <a class="nav-link text-dark" asp-area="" asp-controller="Roles" asp-action="New">AddRoles</a>
+                                        
                                     }
                                         <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
                                    
@@ -78,6 +78,8 @@
                         <input class="form-control mr-sm-2" type="search" name="searchTerm" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
+                    <ul> </ul>
+                    <button class="btn btn-outline-success my-2 my-sm-0" onclick="translatePage()">Translate</button>
                 </div>
             </div>
         </nav>
@@ -109,6 +111,30 @@
         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<script>
+    function translatePage() {
+        // Add Google Translate widget dynamically
+        var googleTranslateScript = document.createElement('script');
+        googleTranslateScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        document.body.appendChild(googleTranslateScript);
+
+        // Initialize Google Translate
+        window.googleTranslateElementInit = function() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'ar',
+                includedLanguages: 'en,ar', 
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        };
+
+        // Create container for translate widget if not exists
+        if (!document.getElementById('google_translate_element')) {
+            var div = document.createElement('div');
+            div.id = 'google_translate_element';
+            document.body.insertBefore(div, document.body.firstChild);
+        }
+    }
 </script>
 </body>
 </html>

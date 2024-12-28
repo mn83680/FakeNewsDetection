@@ -1,5 +1,17 @@
 ﻿<!-- list News -->
 @model List<News>
+<style>
+    .Fake-Text {
+    color: #ff0000;
+    background-color: #ffffff;
+    border-color: #ff0000;
+}
+    .News_Time {
+    font-size: 16px;
+    color: #6c757d ;
+    
+}
+</style>
 <div class="container row text-center">
     @foreach (var item in Model)
     {
@@ -11,7 +23,7 @@
                 <div class="card-body">
                     <h5 class="card-title">@item.Title</h5>
                     <p class="card-text">@item.Content </p>
-                    <p class="card-text">@item.CreatedAt</p>
+                    <p class=" News_Time">@item.CreatedAt</p>
                     @if(item.IsFake == true)
                     {
                         <p class="Fake-Text">This News is Fake</p> 
