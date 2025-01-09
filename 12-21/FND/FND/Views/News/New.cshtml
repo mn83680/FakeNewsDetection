@@ -2,15 +2,7 @@
 @{
     ViewData["Title"] = "Create News";
 }
-<h1>Create News</h1>
-<form method="post" enctype="multipart/form-data" action="/News/UploadImage">
-    <div class="form-group">
-        <label for="image">Upload Image</label>
-        <input type="file" name="image" class="form-control" />
-    </div>
-    <button type="submit" class="btn btn-primary">Upload Image</button>
-</form>
-<hr/>
+
 <form method="post" enctype="multipart/form-data" action="/News/New">
     <div class="form-group">
         <label for="Title">Title</label>

@@ -17,10 +17,8 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <div class="container-fluid">
+                
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
@@ -66,20 +64,26 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Food">Food & Drink</a>
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="StyleAndBeauty">Style & Beauty</a>
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Entertainment">Entertainment</a>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="QueerVoices">Queer Voices</a>
+                                
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Crime">Crime</a>
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Education">Education</a>
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Prediction" asp-action="Predict">Predict</a>
                                 <!-- Add more categories here container -->
                             </div>
                         </li>
+                         
                     </ul>
                     <form class="form-inline my-2 my-lg-0" action="/News/SearchResult" method="get">
                         <input class="form-control mr-sm-2" type="search" name="searchTerm" placeholder="Search" aria-label="Search">
+                         <p> - </p>
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
-                    <ul> </ul>
+                    <p> - </p>
                     <button class="btn btn-outline-success my-2 my-sm-0" onclick="translatePage()">Translate</button>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 </div>
             </div>
         </nav>
@@ -91,6 +95,7 @@
         </main>
     </div>
     <footer class="border-top footer text-muted">
+
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

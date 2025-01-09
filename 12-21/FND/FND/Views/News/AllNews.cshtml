@@ -1,33 +1,96 @@
 ﻿<!-- list News -->
 @model List<News>
 <style>
-    .Fake-Text {
-    color: #ff0000;
-    background-color: #ffffff;
-    border-color: #ff0000;
-}
-    .News_Time {
-    font-size: 16px;
-    color: #6c757d ;
-    
-}
-</style>
-<div class="container row text-center">
-    @foreach (var item in Model)
-    {
-        <div class="  col-md-4 pb-1 pb-md-0 ">
-            <div class="card">
-                <img class="card-img-top" src="~/images/@item.image" alt="Card image cap" style="width: 100%; height: 300px; object-fit: cover ;">
-                <div class="card-body">
-                    <h5 class="card-title">@item.Title</h5>
-                    <p class="card-text">@item.Content </p>
-                    <p class=" News_Time">@item.CreatedAt</p>
-                    @if(item.IsFake == true)
-                    {
-                        <p class="Fake-Text">This News is Fake</p> 
-                    }
-                </div>
-           </div>
-      </div>
+    .container-main {
+        display: flex; /* استخدام flexbox لتوزيع العناصر */
+        flex-direction: row; /* توزيع العناصر أفقياً */
     }
+
+    .content {
+        flex: 1; /* يجعل المحتوى يأخذ كل المساحة المتبقية */
+        margin-right: 20px; /* إضافة مسافة بين المحتوى والجدول */
+    }
+
+    .fixed-table {
+        width: 300px; /* عرض الجدول */
+        background-color: #fff; /* لون الخلفية */
+        border: 1px solid #ddd; /* حدود الجدول */
+        padding: 10px;
+        overflow-y: auto; /* تمكين التمرير العمودي إذا كان المحتوى طويلًا */
+        max-height: 80vh; /* تحديد أقصى ارتفاع للجدول */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* إضافة ظل */
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse; /* إزالة الفراغ بين خلايا الجدول */
+        
+    }
+
+    .table td {
+        padding: 5px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    .Fake-Text {
+        color: #ff0000;
+        background-color: #ffffff;
+        border-color: #ff0000;
+    }
+
+    .News_Time {
+        font-size: 16px;
+        color: #6c757d;
+    }
+</style>
+
+<div class="container-main">
+    <!-- المحتوى الرئيسي -->
+    <div class="content">
+        <div class="container row text-center">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 pb-1 pb-md-0">
+                    <div class="card">
+                        <img class="card-img-top" src="~/images/@item.image" alt="Card image cap" style="width: 100%; height: 300px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Title</h5>
+                            <p class="card-text">@item.Content</p>
+                            <p class="News_Time">@item.CreatedAt</p>
+                            @if(item.IsFake == true)
+                            {
+                                <p class="Fake-Text">This News is Fake</p> 
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="fixed-table">
+            <table class="table">
+               <h3 align="center"> الأخبار الرياضية </h3>
+                @foreach (var item in Model)
+                {
+                    if (item.Category_Id == 1)
+                    {
+                        <tr>
+                            <td><p align="center">@item.Title </p></td>
+                        </tr>
+                    }
+                }
+                <td><h3 align="center"> الأخبار  </h3></td>
+                @foreach (var item in Model)
+                {
+                    if (item.Category_Id != 1)
+                    {
+                        <tr>
+                            <td><p align="center">@item.Title </p></td>
+                        </tr>
+                    }
+                }
+         </table>
+    </div>
 </div>
